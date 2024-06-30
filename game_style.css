@@ -1,0 +1,38 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:"Century Gothic";
+}
+.header{
+    height:80px;
+    color:white;
+    text-align:center;
+    background-color:steelblue;
+    font-size:30px;
+}
+.main{
+    background-image:url(./img/cave.png);
+    background-size:cover;
+    height:757px;
+    background-position:center;
+    background-repeat:no-repeat;
+    text-align:center;
+}
+canvas{
+    /*backgroundは背景全般の設定をすることが可能*/
+    background:#eee;
+    display:inline-block;
+    margin:120px 0;
+    margin-bottom:50px;
+}
+.button{
+    display:inline-block;
+    margin:0 auto;
+    width:200px;
+    height:100px;
+}
+input{
+    font-size:100%;
+    width:160px;
+    height:40px;
+}

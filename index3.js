@@ -2,8 +2,8 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var x = canvas.width / 2;
 var y = canvas.height - 30;
-var dx = 3;
-var dy = -3;
+var dx = 4;
+var dy = -4;
 const ballRadius = 10;
 const paddleHeight = 10;
 const paddleWidth = 100;
@@ -127,7 +127,7 @@ function collisionJudge(){
                     score++;
                     if(score == bricks_count){
                         alert(
-                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${bricks_count})`
                         )
                         location.href = "./result1.html";
                      }
@@ -140,7 +140,7 @@ function collisionJudge(){
 function Score(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText(`Score: ${score}`, 8, 20)
+    ctx.fillText(`Score: ${score}/(${bricks_count})`, 8, 20)
 }
 
 function Lives(){
@@ -190,14 +190,14 @@ function draw(){
             lives--;
             if (!lives){
                 alert(
-                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${bricks_count})`
                 );
                 location.href = "./result2.html";
             }else{
                 x = canvas.width / 2;
                 y = canvas.height - 30;
-                dx = 3;
-                dy = -3;
+                dx = 4;
+                dy = -4;
                 paddleX = (canvas.width - paddleWidth) / 2;
             }
         }
@@ -217,4 +217,14 @@ function Start(){
     draw()
 }
 
+function output_time(){
+    document.getElementById("output_time").innerHTML() = `Time: ${time}`;
+}
+
+function output_score(){
+    document.getElementById("output_score").innerHTML() = `Score: ${score}`;
+}
+
 drawObjects();
+output_time();
+output_score();

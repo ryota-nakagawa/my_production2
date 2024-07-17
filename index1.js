@@ -109,7 +109,7 @@ function collisionJudge(){
                     score++;
                     if(score == brickRowCount * brickColumnCount){
                         alert(
-                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${brickColumnCount*brickRowCount})`
                         )
                         location.href = "./result1.html";
                      }
@@ -122,7 +122,7 @@ function collisionJudge(){
 function Score(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText(`Score: ${score}`, 8, 20)
+    ctx.fillText(`Score: ${score}(/${brickColumnCount*brickRowCount})`, 8, 20)
 }
 
 function Lives(){
@@ -172,7 +172,7 @@ function draw(){
             lives--;
             if (!lives){
                 alert(
-                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${brickColumnCount*brickRowCount})`
                 );
                 location.href = "./result2.html";
             }else{
@@ -199,5 +199,14 @@ function Start(){
     draw()
 }
 
-drawObjects();
+function output_time(){
+    document.getElementById("output_time").innerHTML() = `Time: ${time}`;
+}
 
+function output_score(){
+    document.getElementById("output_score").innerHTML() = `Score: ${score}`;
+}
+
+drawObjects();
+output_time();
+output_score();

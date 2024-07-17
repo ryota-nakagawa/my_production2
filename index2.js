@@ -124,7 +124,7 @@ function collisionJudge(){
                     score++;
                     if(score == bricks_count){
                         alert(
-                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                            `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${bricks_count})`
                         )
                         location.href = "./result1.html";
                     }
@@ -137,7 +137,7 @@ function collisionJudge(){
 function Score(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText(`Score: ${score}`, 8, 20)
+    ctx.fillText(`Score: ${score}(/${bricks_count})`, 8, 20)
 }
 
 function Lives(){
@@ -187,7 +187,7 @@ function draw(){
             lives--;
             if (!lives){
                 alert(
-                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score} (/${brickColumnCount*brickRowCount})`
+                    `FINISH!\n\nPlay time : ${time} seconds\n\nScore : ${score}(/${bricks_count})`
                 );
                 location.href = "./result2.html";
             }else{
